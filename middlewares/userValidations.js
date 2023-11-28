@@ -43,11 +43,13 @@ const loginValidation = () => {
 const userUpdateValidation = () => {
   return [
     body("name")
+      .optional()
       .notEmpty()
       .withMessage("The name is required.")
       .isLength({ min: 3 })
       .withMessage("The name needs a minimum of 3 characters"),
     body("password")
+      .optional()
       .isLength({ min: 6 })
       .withMessage("The password needs a minimum os 6 characters"),
   ];
